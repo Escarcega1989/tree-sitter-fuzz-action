@@ -31,6 +31,7 @@ build_dict() {
 build_fuzzer() {
 	cat <<END | clang -fsanitize=fuzzer,address,undefined $CFLAGS -lstdc++ -g -x $XFLAG - src/$SCANNER src/parser.c $@ -o $ROOT_DIR/fuzzer
 #include <stdio.h>
+ 
 #include <stdlib.h>
 #include <tree_sitter/api.h>
 
